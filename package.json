@@ -16,6 +16,8 @@
   },
   "dependencies": {
     "express": "^4.16.3",
+    "node-cleanup": "^2.1.2",
+    "redis": "^2.8.0",
     "ws": "^5.2.1"
   }
 }

@@ -17,9 +17,9 @@
     }
 
     ws = new WebSocket(`ws://${location.host}`);
-    ws.onerror = () => showMessage('WebSocket error');
-    ws.onopen = () => showMessage('WebSocket connection established');
-    ws.onclose = () => showMessage('WebSocket connection closed');
-    ws.onmessage = msg => showMessage(msg);
+    ws.onerror = () => showMessage('-----> WebSocket error');
+    ws.onopen = () => showMessage('-----> WebSocket connection established');
+    ws.onclose = () => showMessage('-----> WebSocket connection closed');
+    ws.onmessage = event => showMessage(event.data);
   };
 })();
