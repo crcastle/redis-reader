@@ -16,7 +16,8 @@
       ws.close();
     }
     url = `ws://${location.host}`
-    if (window.location.protocol.match('https')) url.replace(/^ws:/, 'wss:')
+    if (window.location.protocol.match('https')) url.replace(/^ws:/, 'wss:');
+    console.log("Connecting to ", url);
     ws = new WebSocket(url);
     ws.onerror = () => showMessage('-----> WebSocket error');
     ws.onopen = () => showMessage('-----> WebSocket connection established');
