@@ -15,8 +15,9 @@
       ws.onerror = ws.onopen = ws.onclose = null;
       ws.close();
     }
-
-    ws = new WebSocket(`ws://${location.host}`);
+    url = `ws://${location.host}`
+    if (window.location.protocol.match('https')) url.replace(/^ws:/, 'wss:')
+    ws = new WebSocket(url);
     ws.onerror = () => showMessage('-----> WebSocket error');
     ws.onopen = () => showMessage('-----> WebSocket connection established');
     ws.onclose = () => showMessage('-----> WebSocket connection closed');
